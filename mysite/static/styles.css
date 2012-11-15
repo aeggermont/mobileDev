@@ -1,0 +1,123 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size:medium;
+}
+
+html,body{
+    background-image:url('images/AAE_Website_bg.jpg'); 
+}
+
+.cb{
+    clear:both;
+}
+
+.fr{
+    float:right;
+}
+
+.fl{
+    float:left;
+}
+
+.bn{
+    border:none;
+}#main{
+    margin: 0 auto;
+    width:900px;
+    background-color:White;
+}
+
+.bannerIEPadder, .sidebarIEPadder, .contentIEPadder{
+    padding:10px;
+}
+
+.navIEPadder, .footerIEPadder{
+    padding:5px;
+}
+
+
+#topbanner{
+	width:900px;
+        height:40px;
+        position:relative;
+        margin-top:30px;
+	float:left;
+        font-size:36px;
+	border-style: solid solid none solid;
+	border-color: #00000;
+	border-size: 0px;
+	border-width:0px;
+}
+
+#topBannerProf{
+    font-size:18px;
+    float:left;
+    margin-top:10px;
+    border-style: solid solid none solid;
+    border-color: #00000;
+    border-size: 0px;
+    border-width:0px;
+}
+
+
+#navmenua{
+	margin-top:100px;
+        float:right;
+        margin-right:100px;
+      	border-style: solid solid none solid;
+	border-color: #00000;
+	border-size: 0px;
+	border-width:0px;
+}
+
+
+#navmenu{
+	margin-top:200px;
+        position:relative;
+	width: 100px; 
+	border-style: solid solid none solid;
+	border-color: #00000;
+	border-size: 0px;
+	border-width:0px;
+}
+
+
+div.cart_box{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size:medium;
+} 
+
+div.cart_box a{
+    color:white;
+}
+
+#sidebar{
+    width:200px;
+    float:left;
+}
+
+#content{
+    width:700px;
+    float:left;
+}
+
+#footer{
+
+    clear:both;
+    background-color:#98Ac5E;
+    color: White;
+    text-align:center;
+}
+
+a.skip_link{
+    position:absolute;
+    left:-1000px;
+    top:-1000px;
+}

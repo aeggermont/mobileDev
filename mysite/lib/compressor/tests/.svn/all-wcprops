@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests
+END
+filters.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/filters.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/base.py
+END
+templatetags.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/templatetags.py
+END
+jinja2ext.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/jinja2ext.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/__init__.py
+END
+parsers.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/parsers.py
+END
+settings.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/settings.py
+END
+signals.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/signals.py
+END
+precompiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/precompiler.py
+END
+offline.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/offline.py
+END
+storages.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/entertainment/!svn/ver/155780/tvcom/site/branches/5.24/tvcom/lib/compressor/tests/storages.py
+END
