@@ -8,6 +8,43 @@
 }
 
 
+/* RESPONSIVE CSS
+ *     -------------------------------------------------- */
+
+@media (max-width: 979px) {
+
+     .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+}
+
+
+
 .transbox
 {
     position: relative ;
@@ -24,3 +61,26 @@
     filter:alpha(opacity=60); /* For IE8 and earlier */
 }
 
+.myfooter
+{
+    position: relative ;
+    top: 380px;
+}
+
+#pagefooters {
+    position: relative ;
+    top: 1800px;
+}
+
+#screenblocks {
+    position: relative ;
+    top:  110px;
+    left: 80px;
+}
+
+#biography {
+
+    position: relative ;
+    top:  110px;
+    left: 80px;
+}

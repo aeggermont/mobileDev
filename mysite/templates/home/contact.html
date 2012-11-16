@@ -4,18 +4,22 @@
 <html lang="en">
     <head>
         <title> {{ head_title }} </title>
-        <meta name = "viewport" content = "width = device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
         <link href="/static/styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="apple-touch-icon" href="custom_icon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/styles/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     </head>
 
     <body>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/static/styles/bootstrap/js/bootstrapfixes.js"></script>
 
         <!-- NAVBAR ================================================== -->
         <!-- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper. -->
@@ -33,7 +37,7 @@
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="/biography/">Biography</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Work <b class="caret"></b></a>
@@ -48,7 +52,7 @@
                             </li>
                             <li><a href="/resume/">Resume</a></li>
                             <li><a href="/references/">References</a></li>
-                            <li ><a href="/contact/">Contact</a></li>
+                            <li  class="active"><a href="/contact/">Contact</a></li>
                             <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -58,24 +62,53 @@
 
 
 
-        <div class="container">
-            <div class="transbox">
-                <h4><font color="#bbcb78b7"> Home page of </font></h4>
-                <h3><font color="white">Antonio Aranda Eggermont  </font> </h3>
-            </div>
+        <div id="screenblocks" class="container-fluid">
+            <div class="row-fluid">
+                <div class="span10">
+                    <div >
+
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span4">
+                                <h4>Antonio A Eggermont</h4>
+                                <p>
+
+                                <a class="adress" href="http://www.linkedin.com/pub/antonio-eggermont/8/a7b/23a"><img alt="LinkedIn" src="/static/images/linkedin.png" /> Antonio A. Eggermont </a><br /><br />
+                                Antonio.Eggermont@post.harvard.edu <br>
+                                1390 Market Street<br>
+                                San Francisco, CA 94902
+                                </p>
+
+                        </div><!--/span-->
+
+                        <div class="span8">
+                            <iframe width="500" height="300" style="border: 1px #ccc solid; padding: 5px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1169+Market+Street,+San+Francisco,+CA&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,55.107422&amp;ie=UTF8&amp;hq=&amp;hnear=1169+Market+St,+San+Francisco,+California+94103&amp;t=h&amp;ll=37.778415,-122.413487&amp;spn=0.005936,0.011802&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1169+Market+Street,+San+Francisco,+CA&amp;sll=37.0625,-95.677068&amp;sspn=45.553578,55.107422&amp;ie=UTF8&amp;hq=&amp;hnear=1169+Market+St,+San+Francisco,+California+94103&amp;t=h&amp;ll=37.778415,-122.413487&amp;spn=0.005936,0.011802&amp;z=16&amp;iwloc=A" style="color:#0000FF;text-align:left"></a></small>
+
+
+                        </div><!--/span-->
+
+                    </div><!--/row-->
+
+                </div><!--/span-->
+            </div><!--/row-->
         </div>
 
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
 
         <div class="container">
-            <div class="myfooter">
             <hr>
             <footer>
                 <p class="pull-right"><a href="#">Back to top</a></p>
                 <p>&copy; 2012 Antonio Aranda Eggermont, All rights reserved.</p>
             </footer>
-            </div>
+
         </div>
+
 
     </body>
 </html>

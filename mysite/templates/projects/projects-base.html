@@ -16,9 +16,8 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrap.min.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrapfixes.js"></script>
+        <script src="/static/scripts/mysite.js"></script>
 
-        <!-- NAVBAR ================================================== -->
-        <!-- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper. -->
         <div class="container navbar-wrapper">
 
             <div class="navbar navbar-inverse">
@@ -33,17 +32,17 @@
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="/biography/">Biography</a></li>
-                            <li class="dropdown">
+                            <li><a href="/">Home</a></li>
+                            <li ><a href="/biography/">Biography</a></li>
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Work <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/projects?project=cbsinteractive">CBS Interactive</a></li>
+                                    <li class="active"><a href="/projects?project=cbsinteractive">CBS Interactive</a></li>
                                     <li><a href="/projects?project=disney">Walt Disney Pictures</a></li>
                                     <li><a href="/projects?project=harvard">Harvard University</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Projects</li>
-                                    <li><a href="/projects?project=garick">Digital Cinematography</a></li>
+                                    <li><a href="/projects?project=garick">Virtual Cinematography</a></li>
                                 </ul>
                             </li>
                             <li><a href="/resume/">Resume</a></li>
@@ -56,26 +55,10 @@
             </div><!-- /.navbar -->
         </div><!-- /.container -->
 
+        {% block site_wrapper %}
 
+        {% endblock %}
 
-        <div class="container">
-            <div class="transbox">
-                <h4><font color="#bbcb78b7"> Home page of </font></h4>
-                <h3><font color="white">Antonio Aranda Eggermont  </font> </h3>
-            </div>
-        </div>
-
-
-
-        <div class="container">
-            <div class="myfooter">
-            <hr>
-            <footer>
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; 2012 Antonio Aranda Eggermont, All rights reserved.</p>
-            </footer>
-            </div>
-        </div>
 
     </body>
 </html>

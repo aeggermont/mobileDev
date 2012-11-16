@@ -4,19 +4,20 @@
 <html lang="en">
     <head>
         <title> {{ head_title }} </title>
+        <meta name = "viewport" content = "width = device-width, initial-scale=1">
         <link href="/static/styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="apple-touch-icon" href="custom_icon.png">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="viewport" content="width=device-width">
+
+
+    </head>
 
     </head>
 
     <body>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/styles/bootstrap/js/bootstrapfixes.js"></script>
 
         <!-- NAVBAR ================================================== -->
         <!-- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper. -->
@@ -39,17 +40,17 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Work <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">CBS Interactive</a></li>
-                                    <li><a href="#">Walt Disney Pictures</a></li>
-                                    <li><a href="#">Harvard University</a></li>
+                                    <li><a href="/projects?project=cbsinteractive">CBS Interactive</a></li>
+                                    <li><a href="/projects?project=disney">Walt Disney Pictures</a></li>
+                                    <li><a href="/projects?project=harvard">Harvard University</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Projects</li>
-                                    <li><a href="#">Virtual Cinematography</a></li>
-                                    <li><a href="#">Photography </a></li>
+                                    <li><a href="/projects?project=garick">Digital Cinematography</a></li>
                                 </ul>
                             </li>
                             <li class="active"><a href="/resume/">Resume</a></li>
-                            <li ><a href="#contact">Contact</a></li>
+                            <li><a href="/references/">References</a></li>
+                            <li><a href="/contact/">Contact</a></li>
                             <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -59,12 +60,21 @@
 
         <div class="container">
             <div class="transbox">
-                <h4><font color="#bbcb78b7"> Home page of </font></h4>
-                <h3><font color="white">Antonio Aranda Eggermont  </font> </h3>
-
+                <h4><font color="#bbcb78b7"> My Resume </font></h4>
+                <p><a href="/public/images/AntonioAEggermontResume-October2012.pdf"><font color="white"> Antonio A Eggermont - Download PDF </font> </a></p>
             </div>
-
         </div>
+
+        <div class="container">
+            <div class="myfooter">
+                <hr>
+                <footer>
+                    <p class="pull-right"><a href="#">Back to top</a></p>
+                    <p>&copy; 2012 Antonio Aranda Eggermont, All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+
 
     </body>
 </html>
