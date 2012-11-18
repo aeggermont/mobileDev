@@ -5,7 +5,10 @@
     <head>
         <title> {{ head_title }} </title>
         <meta name = "viewport" content = "width = device-width, initial-scale=1">
+        <meta name="google-translate-customization" content="4ff57205f540339a-c75b2f2701e0e4b7-gc86939a09139749a-14"/>
+
         <link href="/static/styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/static/styles/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -31,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">{{ page_name }}</a>
+                    <a class="brand" href="/">{{ page_name }}</a>
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                         <ul class="nav">
@@ -58,23 +61,57 @@
             </div><!-- /.navbar -->
         </div><!-- /.container -->
 
-        <div class="container">
-            <div class="transbox">
-                <h4><font color="#bbcb78b7"> My Resume </font></h4>
-                <p><a href="/public/images/AntonioAEggermontResume-October2012.pdf"><font color="white"> Antonio A Eggermont - Download PDF </font> </a></p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1">
+
+                </div><!--/span-->
+                <div class="span10">
+                    <div class="row-fluid">
+                        <div class="span2">
+                        </div>
+                        <div class="span8">
+                            <div class="transbox">
+                                <h4><font color="#bbcb78b7"> My Resume </font></h4>
+                                <p><a href="/public/images/AntonioAEggermontResume-October2012.pdf"><font color="white"> Antonio A Eggermont - Download PDF </font> </a></p>
+                            </div>
+                        </div>
+                    </div><!--/row-->
+                </div><!--/.fluid-container-->
+
+            </div>
+            <br><br>
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span3">
+                    <div id="google_translate_element"></div><script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'eo'}, 'google_translate_element');
+                    }
+                </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+            </div>
+            <br><br><br>
+            <br><br>
+
+            <div class="row-fluid">
+                <div class="span4"></div>
+                <div class="span8">
+                    <hr>
+                    <footer>
+                        <p>© Antonio A Eggermont, all rights reserved</p>
+                    </footer>
+                </div>
             </div>
         </div>
-
-        <div class="container">
-            <div class="myfooter">
-                <hr>
-                <footer>
-                    <p class="pull-right"><a href="#">Back to top</a></p>
-                    <p>&copy; 2012 Antonio Aranda Eggermont, All rights reserved.</p>
-                </footer>
-            </div>
-        </div>
-
 
     </body>
 </html>

@@ -3,54 +3,59 @@
 
 {% block site_wrapper %}
 
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <div id="screenblocks" class="container-fluid">
+    <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span10">
-                <div >
+            <div class="span1">
 
-                </div>
-                <div class="row-fluid">
-                    <div class="span3">
-
-                        <a href="http://www.tv.com" target="_blank"><img src="/static/images/tvcom.png"  width="150" height="150"  /> </a>
-
-                    </div><!--/span-->
-
-                    <div class="span8">
-                        <h4> My Work @ CBS Interactive </h4>
-                        <p> CBS Interactive ( formerly CBS Digital Media Group), a division of CBS corporation, is an online content network for information and entertainment.
-                            Brands include CBS.com, CNET, TV.com, metacritic.com, and CBS News.
-                            <br><br>
-                            My role at CBS Interactive is as an engineering generalist currently working for TV.com where assist and support  in the integration and implementation of back-end web services,  front-end applications, and development of Web applications for content management systems for online publishing, and automation of content acquisition.
-                            On the front-end side, my work has focused on developing Web applications for content management systems employing technologies like Ajax, jQuery, HTML5, CSS, django apps, JavaScript, Twittter Bootstrap, and REST services integration.   An important component of this task also include automation of content acquisition and data consumption from RSS feeds from Television partners.
-                            <br><br>
-                            On the back-end side, my work has mainly focused on integrations and configurations of services on AWS/Right Scale. Specifically my contributions in this area have been the configuration of Web servers, building of server templates, CDN integrations, configuration of Web apps Django applications,  URL dispatchers and  redirects, Tomcat/J2EE services, and caching ( memcached).
-                        </p>
-
-                    </div><!--/span-->
-
-                </div><!--/row-->
+            </div>
+            <div class="span2">
+                <a href="http://www.tv.com" target="_blank"><img src="/static/images/tvcom.png"  width="150" height="150"  /> </a>
             </div><!--/span-->
-        </div><!--/row-->
+            <div class="span8">
+                <h4> My Work @ CBS Interactive </h4>
+                <p> CBS Interactive ( formerly CBS Digital Media Group), a division of CBS corporation, is an online content network for information and entertainment.
+                    Brands include CBS.com, CNET, TV.com, metacritic.com, and CBS News.
+                    <br><br>
+                    My role at CBS Interactive is as an engineering generalist working for TV.com where I have assisted and supported  in the integration and implementation of back-end web services,  front-end applications, and development of Web applications for content management systems for online publishing, and automation of content acquisition.
+                    On the front-end side, my work has focused on developing Web applications for content management systems employing technologies like Ajax, jQuery, HTML5, CSS, django apps, JavaScript, Twittter Bootstrap, and REST services integration.   An important component of this task also include automation of content acquisition and data consumption from RSS feeds from Television partners.
+                    <br><br>
+                    On the back-end side, my work has mainly focused on integrations and configurations of services on AWS/Right Scale. Specifically my contributions in this area have been the configuration of Web servers, building of server templates, CDN integrations, configuration of Web apps Django applications,  URL dispatchers and  redirects, Tomcat/J2EE services, and caching ( memcached).
+                </p>
+
+            </div><!--/.fluid-container-->
+
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span1"></div>
+        <div class="span3">
+            <div id="google_translate_element"></div><script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'eo'}, 'google_translate_element');
+            }
+        </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
     </div>
 
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-        <hr>
-        <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2012 Antonio Aranda Eggermont, All rights reserved.</p>
-        </footer>
-
+    <br><br>
+    <div class="row-fluid">
+        <div class="span4"></div>
+        <div class="span8">
+            <hr>
+            <footer>
+                <p>© Antonio A Eggermont, all rights reserved</p>
+            </footer>
+        </div>
     </div>
+
+
 
 {% endblock %}

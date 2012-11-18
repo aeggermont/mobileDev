@@ -47,12 +47,8 @@
 
 .transbox
 {
-    position: relative ;
-    top: 250px;
-    left: 400px;
-    width:340px;
-    height:85px;
     margin:30px 50px;
+    border-top-width: 200;
     background-color:#1a7ae5;
     padding: 25px;
     border:0px solid black;
@@ -64,7 +60,7 @@
 .myfooter
 {
     position: relative ;
-    top: 380px;
+    text-align: center;
 }
 
 #pagefooters {
