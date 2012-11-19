@@ -164,6 +164,11 @@ def biography(request):
     return HttpResponse(output)
 
 
+def healthcheck(request):
+
+    response_html = u"<html><body></body></html>"
+    return HttpResponse(response_html)
+
 
 def home(request):
 
