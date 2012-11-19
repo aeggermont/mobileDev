@@ -15,6 +15,7 @@ PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 urlpatterns = patterns('',
     (r'^$', 'mysite.home.views.home'),
     (r'^biography/', 'mysite.home.views.biography'),
+    (r'^enabled.html$', 'mysite.home.views.healthcheck'),
     (r'^contact/', 'mysite.home.views.contact'),
     (r'^references/', 'mysite.home.views.references'),
     (r'^resume/', 'mysite.home.views.resume'),
