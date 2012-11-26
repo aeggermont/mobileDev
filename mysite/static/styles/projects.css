@@ -1,0 +1,109 @@
+/**
+ * Slideshow style rules.
+ */
+#slideshow {
+    margin:0 auto;
+    width:740px;
+    height:463px;
+    background:transparent url(/static/images/carousel/bg_slideshow.jpg) no-repeat 0 0;
+    position:relative;
+}
+#slideshow #slidesContainer {
+    margin:0 auto;
+    width:640px;
+    height:263px;
+    overflow:auto; /* allow scrollbar */
+    position:relative;
+}
+#slideshow #slidesContainer .slide {
+    margin:0 auto;
+    width:540px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
+    height:263px;
+}
+
+/**
+ * Slideshow controls style rules.
+ */
+.control {
+    display:block;
+    width:39px;
+    height:263px;
+    text-indent:-10000px;
+    position:absolute;
+    cursor: pointer;
+}
+#leftControl {
+    top:0;
+    left:0;
+    background:transparent url(/static/images/carousel/control_left.jpg) no-repeat 0 0;
+}
+#rightControl {
+    top:0;
+    right:0;
+    background:transparent url(/static/images/carousel/control_right.jpg) no-repeat 0 0;
+}
+
+
+
+
+/**
+ * Style rules for Demo page
+ */
+
+
+#pageContainer {
+    margin:0 auto;
+    width:960px;
+}
+
+.slide h2, .slide p {
+    margin:15px;
+}
+.slide h2 {
+    font:italic 24px Georgia, "Times New Roman", Times, serif;
+    color:#ccc;
+    letter-spacing:-1px;
+}
+.slide img {
+    float:right;
+    margin:0 15px;
+}
+
+
+
+/*************************************************************/
+
+
+#mask{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#000;
+    display:none;
+}
+
+#boxes .window {
+    position:fixed;
+    left:0;
+    top:100;
+    width:840px;
+    height:400px;
+    display:none;
+    z-index:9999;
+    padding:20px;
+}
+
+/* Defines the box size */
+
+#boxes #dialog {
+    width:740px;
+    height:500px;
+    padding:10px;
+    background-color:#ffffff;
+}
+
+.carouselImages {
+    width: 640px;
+    height: 360px;
+}
