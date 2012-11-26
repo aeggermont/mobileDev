@@ -7,6 +7,7 @@ from django.shortcuts import render_to_response
 from django.template.loader import get_template
 from datetime import date
 import re
+from django.conf import settings as setting
 
 #from microdetector import detect_mobile
 
@@ -84,15 +85,34 @@ def projects(request):
     elif re.match(project, "garick"):
 
         template = get_template('projects/garrick.html')
+        BASE_IMAGE_PATH = setting.BASE_IMAGE_PATH + "/carousel/"
+        imageSequence = []
+
+        compFrames    = map(lambda x: ''.join([BASE_IMAGE_PATH, "GarrickPic_" + ("0" + str(x) if x < 10 else str(x)) + ".jpg"]) ,range(1,23))
+        greenScFrames = map(lambda x: ''.join([BASE_IMAGE_PATH, "GarrickPicGreen_" + ("0" + str(x) if x < 10 else str(x)) + ".jpg"]) ,range(1,13))
+
+        # for image in compFrames:
+        #    imageSequence.append(image)
+        #    print compFrames.index()
+
+        # print imageSequence
+
+
+        # files = [{'name': file.split("/")[-1],
+        #      'path': ''.join([BASE_IMAGE_PATH, file]),
+        #      'file': file,
+        #      'cdn_path': ''.join([BASE_IMAGE_PATH, file]) } for file in files]
+
         variables = Context({
             'head_title': 'Antonio A Eggermont Web Site',
-            'page_title': 'My Work @ CBS Interactive',
-            'page_name' : 'antonioeggermont.com',
-            'project_description' : garrickOverview,
+            'page_title': 'Garrick, Digital Cinematography',
+            'today_date': todaydate,
+            'compFrames' : compFrames,
+            'greenScFrames' : greenScFrames,
+            'page_name' : 'antonioeggermont.com'
         })
 
-        output = template.render(variables)
-        return HttpResponse(output)
+        return HttpResponse(template.render(variables))
 
     else:
         response_html = u"<html><body><h1> Project not found </h1>  </body></html>"
@@ -169,6 +189,32 @@ def healthcheck(request):
     response_html = u"<html><body></body></html>"
     return HttpResponse(response_html)
 
+
+def garrick(request):
+
+    template = get_template('projects/garrick.html')
+
+    BASE_IMAGE_PATH = setting.BASE_IMAGE_PATH + "/carousel/"
+
+    compFrames    = map(lambda x: ''.join([BASE_IMAGE_PATH, "GarrickPic_" + ("0" + str(x) if x < 10 else str(x)) + ".jpg"]) ,range(1,13))
+    greenScFrames = map(lambda x: ''.join([BASE_IMAGE_PATH, "GarrickPicGreen_" + ("0" + str(x) if x < 10 else str(x)) + ".jpg"]) ,range(1,13))
+
+    # files = range(1, 13)[GarrickPic_01.jpg]
+    # files = [{'name': file.split("/")[-1],
+    #      'path': ''.join([BASE_IMAGE_PATH, file]),
+    #      'file': file,
+    #      'cdn_path': ''.join([BASE_IMAGE_PATH, file]) } for file in files]
+
+    variables = Context({
+        'head_title': 'Antonio A Eggermont Web Site',
+        'page_title': 'Garrick, Digital Cinematography',
+        'today_date': todaydate,
+        'compFrames' : compFrames,
+        'greenScFrames' : greenScFrames,
+        'page_name' : 'antonioeggermont.com'
+    })
+
+    return HttpResponse(template.render(variables))
 
 def home(request):
 
