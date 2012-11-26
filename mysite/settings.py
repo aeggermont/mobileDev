@@ -80,6 +80,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+BASE_IMAGE_PATH = "/static/images"
 
 COMPRESS_ROOT = (os.path.join(PROJECT_PATH, 'public'))
 COMPRESS_URL = '/public/'
