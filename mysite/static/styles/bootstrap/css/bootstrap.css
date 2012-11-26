@@ -5745,6 +5745,7 @@ a.badge:hover {
 
 .carousel .item > img {
   display: block;
+  width: 100%;
   line-height: 1;
 }
 
