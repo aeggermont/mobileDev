@@ -1,6 +1,7 @@
 # Django settings for mysite project.
 
 import os
+import sys
 
 DEBUG = True
 TEMPLATE_DEBUG = True
@@ -12,6 +13,11 @@ ADMINS = (
 
 # This is the path to the "mysite" project 
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
+# This adds the path to the middleware directory
+
+sys.path.append(PROJECT_PATH+'/lib/')
+
 
 MANAGERS = ADMINS
 
@@ -109,14 +115,16 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'mobile.middleware.MobileMiddleware',
 )
 
 
