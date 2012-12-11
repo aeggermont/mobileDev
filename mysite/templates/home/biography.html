@@ -1,15 +1,76 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <head>
         <title> {{ head_title }} </title>
         <meta name = "viewport" content = "width = device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">  </script>
+        <script src="js/jquery-1.8.3.js"></script>
+        <script src="js/jquery-ui-1.9.2.custom.min.js"> </script>
+
+
         <link href="/static/styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="/static/styles/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link rel="stylesheet" href="/static/styles/homepage.css" type="text/css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="google-translate-customization" content="4ff57205f540339a-c75b2f2701e0e4b7-gc86939a09139749a-14"/>
+
+
+        <script language="javascipt" type="text/javascript">
+
+            $(document).ready(function() {
+               console.log("Document ready!");
+            });
+
+            // Limiting the number of characters in big text box
+            function limitText(limitField, limitCount, limitNum) {
+                if (limitField.value.length > limitNum) {
+                    limitField.value = limitField.value.substring(0, limitNum);
+                    limitCount.innerHTML = " You have exceeded the character limit!"
+                } else {
+                    limitCount.innerHTML = limitNum - limitField.value.length;
+                    //console.log(document.getElementById("wordcount").innerHTML);
+                }
+            }
+
+
+            function validateForm()
+            {
+                console.log("About to validate name!");
+                var x=document.forms["contactInfo"]["name"].value;
+
+                if (x==null || x=="")
+                {
+                    alert("First name must be filled out");
+                    return false;
+                }
+
+                console.log("Finished validating name!");
+                console.log("Validating Email!");
+
+                var email = document.forms["contactInfo"]["email"].value;
+                var atPosition = email.indexOf("@");
+                var dotPosition = email.lastIndexOf("x");
+
+                if ( atPosition < 1 || dorPosition <  atPosition +2 || dotPosition + 2 > email.length )
+                {
+                    alert ("Not a valid email address!");
+                    return false;
+                }
+
+                console.log("Finished validating email address!");
+
+            }
+
+
+            function register() {
+
+                alert("Form submitted!");
+                return this;
+            }
+
+        </script>
 
 
     </head>
@@ -76,9 +137,8 @@
                         During my time at the Walt Disney Studios and Sony Pictures Entertainment, I was involved with the development of media work flows, processes automation, and applications integration for the production of animated feature films employing motion capture technology in 3D. Produced feature films that I have worked on include Body of Lies, Valkyrie, A Christmas Carol and Mars needs Moms.
                         <br><br>
                         While in graduate school at Harvard, I was given the opportunity to work and develop innovative production environments for streaming media and web content delivery for on-line education. Being one of the first adopters of early streaming media technologies allowed me to team up with industry development teams to build effective web based frameworks for online publishing and media distribution.
-
-
-
+                        <br><br>
+                        I am always open to discussing new projects or speaking engagements so feel free to get in touch with me via email or phone. My contact details can be found here or you can just send me a message in this form:
                     </p>
                 </div><!--/.fluid-container-->
 
@@ -86,20 +146,31 @@
 
         </div>
 
+        <div class="container-fluid" >
+            <div class="row-fluid">
+                <div class="span4"> </div>
+                <div class="span8">
+                    <h2> Leave a Reply </h2>
+                    <form name="contactInfo" onsubmit="return validateForm()">
+                        <input name="name"  type="text" accept="" placeholder="Your name" maxlength="30" >    <br>
+                        <input name="email" type="text" accept="" placeholder="Email address" maxlength="30"> <br>
+                        <textarea placeholder = "Leave a message" name="message" onKeyDown="limitText(this.form.message, document.getElementById('wordcount') , 100);"
+                                  onKeyUp="limitText(this.form.message, document.getElementById('wordcount'), 100);">
+                        </textarea>
+                        <div id="wordcount"></div>
+                        <button type="submit" class="btn">Submit </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+
         <br>
         <br>
         <br>
 
-        <div class="row-fluid">
-            <div class="span1"></div>
-            <div class="span3">
-                <div id="google_translate_element"></div><script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({pageLanguage: 'eo'}, 'google_translate_element');
-                    }
-                </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            </div>
-         </div>
 
         <div class="row-fluid">
             <div class="span4"></div>
