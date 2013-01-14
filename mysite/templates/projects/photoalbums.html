@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title> {{ head_title }} </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script src="/static/scripts/third_party/jquery/js/jquery-1.8.3.js"> </script>
+    <script src="/static/scripts/third_party/jquery/js/jquery-ui-1.9.2.custom.js"> </script>
+    <script src="/static/scripts/third_party/jquery/js/jquery-ui-1.9.2.custom.min.js"> </script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/static/scripts/photoAlbums.js"></script>
+</head>
+
+<body onload="getAlbumPhotos()">
+
+
+<h1> Photo Albums </h1>
+
+
+    <h1 id="title"></h1>
+    <p id="description"></p>
+    <p id="link"></p>
+    <div id="images"></div>
+
+    <div id="flickrNav">
+        <a id="prev" href="#">Prev</a><a id="next" href="#">Next</a>
+    </div>
+
+
+    <form name="myform" onsubmit="return getAlbumPhotos();">
+
+        Enter keywords to search: <input type="text" maxlength="20" >
+
+        <button> Search for images </button>
+    </form>
+
+
+</body>
+</html>
+
+

@@ -1,15 +1,23 @@
 
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
     <head>
         <title> {{ head_title }} </title>
         <meta name = "viewport" content = "width = device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">  </script>
-        <script src="js/jquery-1.8.3.js"></script>
-        <script src="js/jquery-ui-1.9.2.custom.min.js"> </script>
+        <script src="/resources/demos/external/jquery.bgiframe-2.1.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+        <script src="/static/scripts/third_party/jquery/js/jquery-1.8.3.js"> </script>
+        <script src="/static/scripts/third_party/jquery/js/jquery-ui-1.9.2.custom.js"> </script>
+        <script src="/static/scripts/third_party/jquery/js/jquery-ui-1.9.2.custom.min.js"> </script>
+
+
+        <link rel="stylesheet" href="/static/styles/jquery/ui-lightness/jquery-ui-1.9.2.custom.css" type="text/css">
+        <link rel="stylesheet" href="/static/styles/jquery/ui-lightness/jquery-ui-1.9.2.custom.min.css" type="text/css">
 
 
         <link href="/static/styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -21,6 +29,7 @@
 
             $(document).ready(function() {
                console.log("Document ready!");
+
             });
 
             // Limiting the number of characters in big text box
@@ -29,7 +38,7 @@
                     limitField.value = limitField.value.substring(0, limitNum);
                     limitCount.innerHTML = " You have exceeded the character limit!"
                 } else {
-                    limitCount.innerHTML = limitNum - limitField.value.length;
+                    limitCount.innerHTML = limitNum - limitField.value.length + " characters left";
                     //console.log(document.getElementById("wordcount").innerHTML);
                 }
             }
@@ -63,7 +72,6 @@
 
             }
 
-
             function register() {
 
                 alert("Form submitted!");
@@ -79,6 +87,17 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrap.min.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrapfixes.js"></script>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
         <div class="container navbar-wrapper">
 
@@ -124,10 +143,10 @@
                 <div class="span1">
 
                 </div>
-                <div class="span3">
+                <div class="span2">
                     <img src="/static/images/AntonioSquare.jpg " alt="Hi!" />
                 </div><!--/span-->
-                <div class="span7">
+                <div class="span8">
                     <h2>About Me</h2>
                     <p>
                         Throughout my career, I have leveraged my deep exposure to online publishing, streaming media, web applications development, and back-end services integration in the entertainment industry.
@@ -146,42 +165,76 @@
 
         </div>
 
-        <div class="container-fluid" >
-            <div class="row-fluid">
-                <div class="span4"> </div>
-                <div class="span8">
-                    <h2> Leave a Reply </h2>
-                    <form name="contactInfo" onsubmit="return validateForm()">
-                        <input name="name"  type="text" accept="" placeholder="Your name" maxlength="30" >    <br>
-                        <input name="email" type="text" accept="" placeholder="Email address" maxlength="30"> <br>
-                        <textarea placeholder = "Leave a message" name="message" onKeyDown="limitText(this.form.message, document.getElementById('wordcount') , 100);"
-                                  onKeyUp="limitText(this.form.message, document.getElementById('wordcount'), 100);">
-                        </textarea>
-                        <div id="wordcount"></div>
-                        <button type="submit" class="btn">Submit </button>
-                    </form>
+
+        {% if  contact_info %}
+
+            <div class="container-fluid" >
+                <div class="row-fluid">
+                    <div class="span4"> </div>
+                    <div class="span8">
+                        <h3> Thanks, your message has been sent! </h3>
+                    </div>
                 </div>
 
             </div>
 
+        {% else %}
+
+            <div class="container-fluid" >
+                <div class="row-fluid">
+                    <div class="span5"> </div>
+                    <div class="span6">
+                        <h3> Leave a Reply </h3>
+                        <form name="contactInfo" method="POST" action="/addContactInfo/" onsubmit="return validateForm()"> {% csrf_token %}
+                            <input name="name"  type="text" accept="" placeholder="Your name" maxlength="30" >    <br>
+                            <input name="email" type="text" accept="" placeholder="Email address" maxlength="30"> <br>
+                            <textarea placeholder = "Leave a message" name="message" onKeyDown="limitText(this.form.message, document.getElementById('wordcount') , 100);"
+                                  onKeyUp="limitText(this.form.message, document.getElementById('wordcount'), 150);">
+                            </textarea>
+                            <div id="wordcount">Maximum 150 characters </div>
+                            <button type="submit" class="btn">Submit </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+       {% endif %}
+
+        <div class="container-fluid">
+
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span5">
+                    <span class="badge badge-info">CONNECT</span>
+                </div>
+            </div>
+            <br>
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span6">
+                    <div id="socialmedia_buttons">
+                        <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
+                        <a href="http://www.linkedin.com/profile/view?id=26540686&trk=hb_tab_pro_top"><img src="/static/images/linkedin.png" width="20" height="20" alt="linkedin" /></a>
+
+                        <div class="fb-like" data-href="http://antonioeggermont.net" data-send="false" data-layout="button_count" data-width="550" data-show-faces="false" data-font="arial"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
         <br>
-        <br>
-        <br>
-
-
+        <hr>
         <div class="row-fluid">
-            <div class="span4"></div>
 
+            <div class="span4"> </div>
             <div class="span8">
-                <hr>
+
                 <footer>
                     <p>© Antonio A Eggermont, all rights reserved</p>
                 </footer>
             </div>
         </div>
+
+
 
 
     </body>

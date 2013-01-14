@@ -15,6 +15,15 @@
     </head>
 
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrap.min.js"></script>
         <script src="/static/styles/bootstrap/js/bootstrapfixes.js"></script>
@@ -62,6 +71,39 @@
         {% block site_wrapper %}
 
         {% endblock %}
+
+        <div class="container-fluid">
+
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span5">
+                    <span class="badge badge-info">CONNECT</span>
+                </div>
+            </div>
+            <br>
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span1">
+                    <a href="http://www.linkedin.com/profile/view?id=26540686&trk=hb_tab_pro_top"><img src="/static/images/linkedin.png" width="20" height="20" alt="linkedin" /></a>
+                </div>
+                <div class="span5">
+                    <div class="fb-like" data-href="http://antonioeggermont.net" data-send="true" data-width="450" data-show-faces="false" data-font="arial"></div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="row-fluid">
+
+                <div class="span4"> </div>
+                <div class="span8">
+
+                    <footer>
+                        <p>© Antonio Aranda Eggermont, all rights reserved</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
 
 
     </body>

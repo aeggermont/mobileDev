@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Testing Java Script, parsing input fields</title>
+    <meta charset="utf-8" content="text/html"/>
+
+    <script language="javascipt" type="text/javascript">
+
+        function limitText(limitField, limitCount, limitNum) {
+            if (limitField.value.length > limitNum) {
+                limitField.value = limitField.value.substring(0, limitNum);
+             } else {
+                limitCount.value = limitNum - limitField.value.length;
+             }
+        }
+
+
+    </script>
+</head>
+<body>
+
+<h1> Testing Form Validation </h1>
+
+<form name="myform">
+    <textarea name="limitedtextarea" onKeyDown="limitText(this.form.limitedtextarea,this.form.countdown,100);"
+              onKeyUp="limitText(this.form.limitedtextarea,this.form.countdown,100);">
+    </textarea><br>
+    <font size="1">(Maximum characters: 100)<br>
+        You have <input readonly type="text" name="countdown" size="3" value="100"> characters left.</font>
+</form>
+To create a single-line text field instead of a text area, use the following code:
+
+<form name="myform">
+    <input name="limitedtextfield" type="text" onKeyDown="limitText(this.form.limitedtextfield,this.form.countdown,15);"
+           onKeyUp="limitText(this.form.limitedtextfield,this.form.countdown,15);" maxlength="15"><br>
+    <font size="1">(Maximum characters: 15)<br>
+        You have <input readonly type="text" name="countdown" size="3" value="15"> characters left.</font>
+</form>
+
+
+</body>
+</html>
