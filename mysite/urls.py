@@ -20,6 +20,18 @@ urlpatterns = patterns('',
     (r'^references/', 'mysite.home.views.references'),
     (r'^resume/', 'mysite.home.views.resume'),
     (r'^garick/', 'mysite.home.views.garrick'),
+    (r'^feeders/', 'mysite.home.views.feeder'),
+    (r'^cookies/', 'mysite.home.views.cookies'),
+    (r'^addContactInfo/', 'mysite.contact.views.addContactInfo'),
+    (r'^photoAlbums/', 'mysite.home.views.photoAlbums'),
+
+    ###  MOBILE SITE ###
+    (r'^m/', 'mysite.home.views.mobilehome'),
+    (r'^test', 'mysite.home.views.test'),
+
+    ### Off-sitre links redirection ###
+    (r'^redir$', 'mysite.home.views.offsiteRedirect'),
+
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': (os.path.join(PROJECT_PATH, 'static')) }),
     (r'^public/(?P<path>.*)$', 'django.views.static.serve', {'document_root': (os.path.join(PROJECT_PATH, 'public')) }),
     url(r'^projects$', 'mysite.home.views.projects'),
