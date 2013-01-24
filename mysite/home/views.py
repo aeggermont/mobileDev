@@ -6,6 +6,15 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.template.loader import get_template
 from datetime import date
+from django.http import Http404
+from django import forms
+import datetime
+from django.core.context_processors import csrf
+
+
+import json
+
+
 import re
 from django.conf import settings as setting
 
@@ -16,6 +25,67 @@ todaydate = date.today()
 overview = '''
     I am a software and systems engineer with experience in the Internet, streaming media, and visual effects production industries. My experience centers on bringing high performance computing and systems integration for digital media content production and delivery. My interests are systems integration and design, cloud computing, streaming media, development of systems provisioning tools and automation, and configuration of interfaces for data analysis and visualization. I enjoy researching emerging technologies and employing holistic analysis to solve problems in a forward-thinking manner.
 '''
+
+
+def photoAlbums(request):
+
+    template = get_template('projects/photoalbums.html')
+
+    variables = Context({
+        'head_title': 'Antonio A Eggermont Web Site',
+        'page_title': 'Photo Albums',
+        'page_name' : 'antonioeggermont.net'
+    })
+
+    output = template.render(variables)
+    return HttpResponse(output)
+
+    #response_html = u"<html><body><h1> Photo Album  </h1> </body></html>"
+    #return HttpResponse(response_html)
+
+
+def addContactInfo(request):
+
+
+    items = [10,20,30,50,100]
+
+    myfeed = { "service" : "httpd",
+               "lastupdate" : str(datetime.datetime.now()),
+               "items" : items
+    }
+
+
+    if request.method == 'GET':
+        return HttpResponse(json.dumps(myfeed))
+
+    elif request.method == 'POST':
+
+        print request
+        response_html = u"<html><body><h1> Getting a POST Request </h1> </body></html>"
+        return HttpResponse(response_html)
+
+    else:
+        response_html = u"<html><body><h1> Invalid Request </h1> </body></html>"
+        return HttpResponse(response_html)
+
+
+
+def test(request):
+
+    template = get_template('home/test1.html')
+
+    variables = Context({
+        'head_title': 'Antonio A Eggermont Web Site',
+        'page_title': 'AJAX Test Page',
+        'page_name' : 'antonioeggermont.net'
+    })
+
+    output = template.render(variables)
+    return HttpResponse(output)
+
+
+
+
 
 def projects(request):
 
@@ -46,7 +116,7 @@ def projects(request):
         variables = Context({
             'head_title': 'Antonio A Eggermont Web Site',
             'page_title': 'My Work @ CBS Interactive',
-            'page_name' : 'antonioeggermont.com',
+            'page_name' : 'antonioeggermont.net',
             'project_description' : cbsInteractive,
         })
 
@@ -59,7 +129,7 @@ def projects(request):
         variables = Context({
             'head_title': 'Antonio A Eggermont Web Site',
             'page_title': 'My Work @ CBS Interactive',
-            'page_name' : 'antonioeggermont.com',
+            'page_name' : 'antonioeggermont.net',
             'project_description' : disneyOverview,
         })
 
@@ -74,7 +144,7 @@ def projects(request):
         variables = Context({
             'head_title': 'Antonio A Eggermont Web Site',
             'page_title': 'My Work @ CBS Interactive',
-            'page_name' : 'antonioeggermont.com',
+            'page_name' : 'antonioeggermont.net',
             'project_description' : harvardOverview,
         })
 
@@ -109,7 +179,7 @@ def projects(request):
             'today_date': todaydate,
             'compFrames' : compFrames,
             'greenScFrames' : greenScFrames,
-            'page_name' : 'antonioeggermont.com'
+            'page_name' : 'antonioeggermont.net'
         })
 
         return HttpResponse(template.render(variables))
@@ -129,7 +199,7 @@ def references(request):
         'page_title': 'References',
         'page_overview': overview,
         'today_date': todaydate,
-        'page_name' : 'antonioeggermont.com'
+        'page_name' : 'antonioeggermont.net'
     })
 
     output = template.render(variables)
@@ -145,7 +215,7 @@ def contact(request):
         'page_title': 'Contact',
         'page_overview': overview,
         'today_date': todaydate,
-        'page_name' : 'antonioeggermont.com'
+        'page_name' : 'antonioeggermont.net'
     })
 
     output = template.render(variables)
@@ -161,27 +231,56 @@ def resume(request):
         'page_title': 'My Resume',
         'page_overview': overview,
         'today_date': todaydate,
-        'page_name' : 'antonioeggermont.com'
+        'page_name' : 'antonioeggermont.net'
     })
 
     output = template.render(variables)
     return HttpResponse(output)
+
+
+
+
+class ContactForm(forms.Form):
+    name    = forms.CharField(label="Your name: ", max_length=40)
+    sender = forms.EmailField(label="Your email address")
+    message = forms.CharField(label="Leave a message: ", widget=forms.Textarea ,  max_length=300)
+    cc_myself = forms.BooleanField(required=False)
+
+
+
 
 def biography(request):
+    """
+    :param request: GET
+    :return: Form object for contact info saver, todays date, etc
+    """
 
-    template = get_template('home/biography.html')
-    myHomeImages = { '1' : 'GarrickPic_01.jpg', '2' : 'GarrickPic_02.jpg', '3' :  'GarrickPic_03.jpg' }
+    if request.method == 'GET':
 
-    variables = Context({
-        'head_title': 'Antonio A Eggermont Web Site',
-        'page_title': 'Welcome to my site',
-        'page_overview': overview,
-        'today_date': todaydate,
-        'page_name' : 'antonioeggermont.com'
-    })
+        # Unbound form
+        form = ContactForm()
 
-    output = template.render(variables)
-    return HttpResponse(output)
+        template = get_template('home/biography.html')
+        myHomeImages = { '1' : 'GarrickPic_01.jpg', '2' : 'GarrickPic_02.jpg', '3' :  'GarrickPic_03.jpg' }
+
+        print "Hello world!"
+
+        context = {
+            'request'   : request,
+            'form'      : form,
+            'today_date': todaydate,
+            'head_title': 'Antonio Aranda Eggermont Web Site',
+            'page_title': 'Welcome to my site',
+            'page_name' : 'antonioeggermont.net',
+
+        }
+
+        context.update(csrf(request))
+        return render_to_response('home/biography.html', context)
+
+
+
+
 
 
 def healthcheck(request):
@@ -211,15 +310,44 @@ def garrick(request):
         'today_date': todaydate,
         'compFrames' : compFrames,
         'greenScFrames' : greenScFrames,
-        'page_name' : 'antonioeggermont.com'
+        'page_name' : 'antonioeggermont.net'
     })
 
     return HttpResponse(template.render(variables))
+
+
+def feeder(request):
+
+    items = [10,20,30,50,100]
+
+    myfeed = { "service" : "httpd",
+               "lastupdate" : str(date.today()),
+               "items" : items
+            }
+
+
+    response_html = json.dumps(myfeed)
+    return HttpResponse("Hello there!")
+
+
+
+def cookies(request):
+
+    template = get_template('home/testCookies.html')
+
+    variables = Context({
+        'page_title': 'Testing Cookies',
+    })
+
+    output = template.render(variables)
+    return HttpResponse(output)
+
 
 def home(request):
 
     # response_html = u"<html><body><h1> Getting a GET request </h1> </body></html>"
     # return HttpResponse(response_html)
+
 
 
     template = get_template('home/home.html')
@@ -230,10 +358,38 @@ def home(request):
         'page_title': 'Welcome to my site',
         'page_overview': overview,
         'today_date': todaydate,
-        'page_name' : 'antonioeggermont.com'
+        'page_name' : 'antonioeggermont.net'
         })
 
     output = template.render(variables)
     return HttpResponse(output)
 
 
+
+
+def mobilehome(request):
+
+
+    template = get_template('home/home.html')
+    myHomeImages = { '1' : 'GarrickPic_01.jpg', '2' : 'GarrickPic_02.jpg', '3' :  'GarrickPic_03.jpg' }
+
+    variables = Context({
+        'head_title': 'Antonio A Eggermont Web Site',
+        'page_title': 'Welcome to my site',
+        'page_overview': overview,
+        'today_date': todaydate,
+        'page_name' : 'antonioeggermont.net'
+    })
+
+    output = template.render(variables)
+    return HttpResponse(output)
+
+
+def offsiteRedirect(request):
+    """Redirection for offsite links"""
+
+    url = request.GET.get('url')
+    if not url:
+        raise Http404
+
+    return HttpResponseRedirect(urllib.unquote_plus(url))
